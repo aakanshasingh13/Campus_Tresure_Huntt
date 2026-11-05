@@ -1,0 +1,38 @@
+﻿[
+    {
+        "id":  "reg-001",
+        "eventId":  "evt-101",
+        "eventTitle":  "The Great Belltower Mystery",
+        "campusName":  "Stanford Innovation Campus",
+        "userId":  "usr-seed-player-001",
+        "username":  "ExplorerArjun",
+        "teamName":  "Cyber Falcons",
+        "pinEntered":  "849201",
+        "status":  "verified",
+        "paymentStatus":  "verified",
+        "utrNumber":  "928172948192",
+        "amount":  199,
+        "currency":  "₹",
+        "registeredAt":  "2026-11-01T19:00:02.044Z",
+        "isPaidEvent":  true,
+        "eventFee":  199
+    },
+    {
+        "id":  "reg-002",
+        "eventId":  "evt-101",
+        "eventTitle":  "The Great Belltower Mystery",
+        "campusName":  "Stanford Innovation Campus",
+        "userId":  "usr-seed-player-005",
+        "username":  "CipherSophia",
+        "teamName":  "Enigma Seekers",
+        "pinEntered":  "849201",
+        "status":  "verified",
+        "paymentStatus":  "verified",
+        "utrNumber":  "551982736412",
+        "amount":  199,
+        "currency":  "₹",
+        "registeredAt":  "2026-11-01T23:10:02.044Z",
+        "isPaidEvent":  true,
+        "eventFee":  199
+    }
+]

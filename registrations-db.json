@@ -1,0 +1,57 @@
+{
+  "evt-101": [
+    {
+      "id": "reg-001",
+      "eventId": "evt-101",
+      "eventTitle": "The Great Belltower Mystery",
+      "campusName": "Stanford Innovation Campus",
+      "userId": "usr-seed-player-001",
+      "username": "ExplorerArjun",
+      "teamName": "Cyber Falcons",
+      "pinEntered": "849201",
+      "status": "verified",
+      "paymentStatus": "verified",
+      "utrNumber": "928172948192",
+      "amount": 199,
+      "currency": "₹",
+      "registeredAt": "2026-11-01T20:20:45.148Z"
+    },
+    {
+      "id": "reg-002",
+      "eventId": "evt-101",
+      "eventTitle": "The Great Belltower Mystery",
+      "campusName": "Stanford Innovation Campus",
+      "userId": "usr-seed-player-005",
+      "username": "CipherSophia",
+      "teamName": "Enigma Seekers",
+      "pinEntered": "849201",
+      "status": "verified",
+      "paymentStatus": "verified",
+      "utrNumber": "551982736412",
+      "amount": 199,
+      "currency": "₹",
+      "registeredAt": "2026-11-02T00:30:45.148Z"
+    },
+    {
+      "id": "reg-1793633684944-70C3D2",
+      "eventId": "evt-101",
+      "eventTitle": "The Great Belltower Mystery",
+      "campusName": "Stanford Innovation Campus",
+      "userId": "usr-seed-player-aakansha",
+      "username": "Aakansha singh",
+      "teamName": "Aakansha singh's Squad",
+      "pinEntered": "849201",
+      "status": "verified",
+      "paymentStatus": "verified",
+      "utrNumber": "",
+      "paymentId": "pay-1793633684944-2D4115",
+      "orderId": "ORD-1793633684944-8E21779B",
+      "transactionId": "SIM-MVZF6MJ8-XBVB",
+      "paymentMode": "sandbox",
+      "isSimulated": true,
+      "amount": 199,
+      "currency": "INR",
+      "registeredAt": "2026-11-02T15:34:44.944Z"
+    }
+  ]
+}

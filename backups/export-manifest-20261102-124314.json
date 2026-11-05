@@ -1,0 +1,9 @@
+﻿{
+    "exportTimestamp":  "2026-11-02T12:43:17.0651122+05:30",
+    "sourceBaseUrl":  "http://localhost:3000",
+    "paymentsFile":  "payments-runtime-backup-20261102-124314.json",
+    "paymentsCount":  2,
+    "registrationsFile":  "registrations-runtime-backup-20261102-124314.json",
+    "registrationsCount":  2,
+    "eventIds":  "evt-101evt-101"
+}

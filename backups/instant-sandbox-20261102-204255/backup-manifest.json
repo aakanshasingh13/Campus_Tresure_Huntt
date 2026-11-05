@@ -1,0 +1,43 @@
+﻿{
+    "createdAt":  "2026-11-02T20:42:55.2620394+05:30",
+    "sourceRoot":  "C:\\Users\\Abhay\\Desktop\\remix-campus-quest\\remix-campus-quest",
+    "backupDirectory":  "C:\\Users\\Abhay\\Desktop\\remix-campus-quest\\remix-campus-quest\\backups\\instant-sandbox-20261102-204255",
+    "files":  [
+                  {
+                      "path":  "payments-db.json",
+                      "name":  "payments-db.json",
+                      "bytes":  6514,
+                      "sha256":  "9DFB8026D6AD0E5A50475326FFC9EC3D90D130BA2F9B136356D2A1DE2FF21E1A",
+                      "lastWriteTime":  "2026-11-02T20:37:42.1432521+05:30"
+                  },
+                  {
+                      "path":  "registrations-db.json",
+                      "name":  "registrations-db.json",
+                      "bytes":  1015,
+                      "sha256":  "8317ED5E0C2F465D7D7F55E2564FC02E5A888B4D707061C2CCC3286530232620",
+                      "lastWriteTime":  "2026-11-02T20:27:23.0571873+05:30"
+                  },
+                  {
+                      "path":  "accounts-db.json",
+                      "name":  "accounts-db.json",
+                      "bytes":  4871,
+                      "sha256":  "12F1E91DB88BC47092172D55D920A98F7A26B6973C79493DBD4AD1E1486F552C",
+                      "lastWriteTime":  "2026-11-02T20:27:23.0446621+05:30"
+                  },
+                  {
+                      "path":  "android\\app\\build\\outputs\\apk\\debug\\Game.apk",
+                      "name":  "Game.apk",
+                      "bytes":  5338824,
+                      "sha256":  "8A8F807E7754A4E365ACEDD50ADEBBD4A34481460482DC7E292019FCE1AB8BB9",
+                      "lastWriteTime":  "2026-11-02T20:30:04.5656617+05:30"
+                  },
+                  {
+                      "path":  "android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+                      "name":  "app-debug.apk",
+                      "bytes":  5338824,
+                      "sha256":  "8A8F807E7754A4E365ACEDD50ADEBBD4A34481460482DC7E292019FCE1AB8BB9",
+                      "lastWriteTime":  "2026-11-02T20:30:04.5656617+05:30"
+                  }
+              ],
+    "envSha256":  "189D5088D48F980CA762D7D9575EBEDFB73BF71AC74E8371484A844C7C66A60A"
+}

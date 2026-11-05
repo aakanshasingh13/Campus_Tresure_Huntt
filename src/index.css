@@ -1,0 +1,682 @@
+@import "tailwindcss";
+
+:root {
+  /* Campus Quest Design Tokens (from reference) */
+  --cq-bg-deep: #03060f;
+  --cq-bg-gradient-start: #050a1c;
+  --cq-bg-gradient-mid: #0d1a3d;
+  --cq-bg-gradient-end: #0a2418;
+  --cq-panel-bg: rgba(10, 17, 44, 0.86);
+  --cq-panel-border: #d9a21b;
+  --cq-panel-inner-border: rgba(251, 191, 36, 0.35);
+  --cq-card-bg: rgba(8, 14, 38, 0.85);
+  --cq-card-border: rgba(251, 191, 36, 0.4);
+  --cq-gold: #fbbf24;
+  --cq-gold-bright: #fde047;
+  --cq-gold-amber: #f59e0b;
+  --cq-cream: #f3e9cf;
+  --cq-cream-muted: #d4c594;
+  --cq-muted: #c9b98a;
+  --cq-wood-orange: #d2691a;
+  --cq-wood-orange-dark: #9a4a07;
+  --cq-wood-brown: #8a4a1c;
+  --cq-wood-brown-dark: #4f2711;
+  --cq-border-blue: #24336a;
+  --cq-nav-bg: #0a0f26;
+  --cq-green: #22c55e;
+  --cq-green-dark: #16a34a;
+}
+
+body,
+html,
+#root {
+  font-family: 'Nunito', 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--cq-bg-deep);
+  color: var(--cq-cream);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Typography */
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif !important;
+}
+
+.font-cinzel-dec {
+  font-family: 'Cinzel', 'Cinzel Decorative', Georgia, serif !important;
+}
+
+.font-nunito {
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif !important;
+}
+
+.cq-heading {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 800;
+  color: var(--cq-gold);
+  letter-spacing: 0.04em;
+}
+
+.cq-heading-lg {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  color: var(--cq-gold);
+  text-shadow: 0 2px 0 #7a3f17, 0 0 14px rgba(251, 191, 36, 0.45);
+}
+
+.cq-text-cream {
+  color: var(--cq-cream);
+}
+
+.cq-text-muted {
+  color: var(--cq-muted);
+}
+
+.cq-text-gold {
+  color: var(--cq-gold);
+}
+
+/* Panels and cards */
+.cq-panel {
+  background: var(--cq-panel-bg);
+  border: 2px solid var(--cq-panel-border);
+  border-radius: 18px;
+  padding: 13px;
+  box-shadow: inset 0 0 0 3px rgba(6, 11, 31, 0.9), inset 0 0 0 4px var(--cq-panel-inner-border), 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cq-card {
+  background: var(--cq-card-bg);
+  border: 1px solid var(--cq-card-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.cq-card-selected {
+  border: 2px solid var(--cq-gold);
+  background: rgba(58, 42, 10, 0.9);
+}
+
+/* Buttons */
+.cq-btn-gold {
+  width: 100%;
+  background: linear-gradient(var(--cq-wood-orange), var(--cq-wood-orange-dark));
+  border: 2px solid var(--cq-gold);
+  border-radius: 14px;
+  color: #fff;
+  font: 800 14px 'Cinzel', Georgia, serif;
+  letter-spacing: 0.08em;
+  padding: 13px;
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.4);
+  cursor: pointer;
+}
+
+.cq-btn-ghost {
+  background: #2a2f4d;
+  box-shadow: none;
+  border-color: #6b7399;
+}
+
+/* Progress bar */
+.cq-bar {
+  height: 9px;
+  border-radius: 9px;
+  background: #1b2750;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.cq-bar-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--cq-gold-amber), var(--cq-gold-bright));
+}
+
+/* Tags */
+.cq-tag {
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid var(--cq-gold);
+  color: var(--cq-gold);
+  border-radius: 8px;
+  padding: 2px 7px;
+}
+
+.cq-tag-green {
+  color: #4ade80;
+  border-color: #4ade80;
+}
+
+/* Clean Fast-Response Interactive Pointer & Hover Styles (No translation shifts to avoid dropped clicks) */
+[role="button"],
+button,
+[data-focusable="true"],
+[tabindex="0"],
+.r-cursor-1loqt21 {
+  cursor: pointer !important;
+  transition: filter 0.08s ease, opacity 0.08s ease !important;
+}
+
+[role="button"]:hover,
+button:hover,
+[data-focusable="true"]:hover {
+  filter: brightness(1.1);
+}
+
+[role="button"]:active,
+button:active,
+[data-focusable="true"]:active {
+  filter: brightness(0.92);
+  opacity: 0.85;
+}
+
+@keyframes campusModalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes campusModalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Staggered entrance animation for dashboard cards */
+@keyframes dashboardCardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-card-1 {
+  animation: dashboardCardFadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.04s backwards;
+}
+
+.stagger-card-2 {
+  animation: dashboardCardFadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.10s backwards;
+}
+
+.stagger-card-3 {
+  animation: dashboardCardFadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.16s backwards;
+}
+
+.stagger-card-4 {
+  animation: dashboardCardFadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.22s backwards;
+}
+
+.stagger-card-5 {
+  animation: dashboardCardFadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.28s backwards;
+}
+
+/* Splash-themed Interactive Card Lift & Amber Glow */
+.quest-interactive-card {
+  transition: transform 0.22s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.22s cubic-bezier(0.2, 0, 0, 1), border-color 0.22s ease !important;
+}
+
+.quest-interactive-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.65), 0 0 16px rgba(245, 158, 11, 0.18) !important;
+  border-color: rgba(251, 191, 36, 0.45) !important;
+}
+
+/* Splash-themed Primary Button with Depth Gradient & Warm Amber Glow */
+.btn-splash-primary {
+  background: linear-gradient(180deg, #f59e0b 0%, #b45309 100%) !important;
+  box-shadow: 0 3px 12px rgba(180, 83, 9, 0.42), inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid #fde047 !important;
+  transition: transform 0.18s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.18s cubic-bezier(0.2, 0, 0, 1), filter 0.18s ease !important;
+}
+
+.btn-splash-primary:hover {
+  transform: translateY(-2px) scale(1.025) !important;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.55), 0 0 16px rgba(253, 224, 71, 0.4) !important;
+  filter: brightness(1.1) !important;
+}
+
+.btn-splash-primary:active {
+  transform: translateY(1px) scale(0.97) !important;
+  box-shadow: 0 1px 4px rgba(180, 83, 9, 0.5) !important;
+  filter: brightness(0.94) !important;
+}
+
+/* Splash-themed Secondary / Neutral Button */
+.btn-splash-secondary {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(251, 191, 36, 0.3) !important;
+  transition: transform 0.18s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.18s cubic-bezier(0.2, 0, 0, 1), border-color 0.18s ease !important;
+}
+
+.btn-splash-secondary:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  border-color: #fbbf24 !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55), 0 0 12px rgba(245, 158, 11, 0.25) !important;
+}
+
+.btn-splash-secondary:active {
+  transform: translateY(1px) scale(0.97) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Ensure only VISIBLE React Native Web Modals are in the frontmost stacking context */
+div[aria-modal="true"]:not([hidden]):not([aria-hidden="true"]):not([style*="display: none"]),
+div[role="dialog"]:not([hidden]):not([aria-hidden="true"]):not([style*="display: none"]) {
+  z-index: 99999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  pointer-events: auto !important;
+}
+
+div[aria-modal="true"][hidden],
+div[aria-modal="true"][aria-hidden="true"],
+div[role="dialog"][hidden],
+div[role="dialog"][aria-hidden="true"],
+div[aria-modal="true"][style*="display: none"],
+div[role="dialog"][style*="display: none"] {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+div[aria-modal="true"]:not([hidden]):not([aria-hidden="true"]):not([style*="display: none"])>div,
+div[role="dialog"]:not([hidden]):not([aria-hidden="true"]):not([style*="display: none"])>div {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+
+
+@keyframes loginPopCrazy {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) scale(0.35) translateY(70px) rotate(-8deg);
+    filter: blur(12px) brightness(1.8);
+  }
+
+  45% {
+    opacity: 1;
+    transform: perspective(1000px) scale(1.08) translateY(-14px) rotate(3deg);
+    filter: blur(0px) brightness(1.1);
+  }
+
+  70% {
+    transform: perspective(1000px) scale(0.96) translateY(5px) rotate(-1.5deg);
+  }
+
+  85% {
+    transform: perspective(1000px) scale(1.02) translateY(-2px) rotate(0.8deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) scale(1) translateY(0) rotate(0deg);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+@keyframes glowBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.login-card-crazy-pop {
+  animation: loginPopCrazy 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transform-origin: center center;
+}
+
+.login-glow-burst {
+  animation: glowBurst 1s ease-out forwards;
+}
+
+@keyframes lanternFlicker {
+
+  0%,
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+
+  25% {
+    opacity: 0.82;
+    transform: scale(0.97);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  75% {
+    opacity: 0.88;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes fireflyFloat {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-12px) translateX(8px);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translateY(-24px) translateX(-4px);
+    opacity: 0.2;
+  }
+}
+
+@keyframes questGlow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 14px rgba(253, 224, 71, 0.45));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 24px rgba(251, 191, 36, 0.75));
+  }
+}
+
+.animate-lantern {
+  animation: lanternFlicker 3s ease-in-out infinite;
+}
+
+.animate-quest-glow {
+  animation: questGlow 4s ease-in-out infinite;
+}
+
+/* Campus Quest Fantasy & Cathedral Arch Theme */
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif !important;
+}
+
+.font-cinzel-dec {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif !important;
+}
+
+.cq-title-gold {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  background: linear-gradient(180deg, #fffbeb 0%, #fef08a 25%, #f59e0b 65%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 14px rgba(245, 158, 11, 0.4));
+  letter-spacing: 2px;
+}
+
+.cq-arch-card {
+  border-top-left-radius: 72px !important;
+  border-top-right-radius: 72px !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  background: linear-gradient(180deg, #101c31 0%, #080f1e 55%, #050a14 100%);
+  border: 2px solid #283a54;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  position: relative;
+}
+
+.cq-arch-card:hover {
+  border-color: #3b5375;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8), 0 0 16px rgba(56, 189, 248, 0.15);
+}
+
+.cq-lantern {
+  background: radial-gradient(circle, #fffbeb 15%, #fef08a 40%, #eab308 80%, #ca8a04 100%);
+  box-shadow: 0 0 14px #facc15, 0 0 24px rgba(250, 204, 21, 0.65);
+}
+
+.cq-dot-green {
+  background-color: #22c55e;
+  box-shadow: 0 0 8px #22c55e, 0 0 14px rgba(34, 197, 94, 0.85);
+}
+
+.cq-btn-open {
+  background: linear-gradient(180deg, #d97706 0%, #b45309 50%, #78350f 100%);
+  border: 1.5px solid #fbbf24;
+  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-family: 'Cinzel', serif;
+}
+
+.cq-btn-open:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.6);
+}
+
+.cq-btn-3d-green {
+  background: linear-gradient(180deg, #065f46 0%, #047857 100%);
+  border-bottom: 4px solid #022c22;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  font-family: 'Cinzel', serif;
+}
+
+.cq-btn-3d-red {
+  background: linear-gradient(180deg, #881337 0%, #9f1239 100%);
+  border-bottom: 4px solid #4c0519;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  font-family: 'Cinzel', serif;
+}
+
+.cq-btn-3d-blue {
+  background: linear-gradient(180deg, #1e3a8a 0%, #1d4ed8 100%);
+  border-bottom: 4px solid #0f172a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  font-family: 'Cinzel', serif;
+}
+
+/* Checkpoint QR Viewfinder Laser Line */
+.scanner-laser-line {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #f59e0b 50%, transparent 100%);
+  box-shadow: 0 0 12px #f59e0b, 0 0 4px #fbbf24;
+  animation: laserScan 2s ease-in-out infinite alternate;
+  z-index: 10;
+}
+
+@keyframes laserScan {
+  0% {
+    top: 8%;
+  }
+
+  100% {
+    top: 92%;
+  }
+}
+
+/* Viewfinder Corner Brackets */
+.scanner-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: #fbbf24;
+  border-style: solid;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.corner-tl {
+  top: 10px;
+  left: 10px;
+  border-width: 3px 0 0 3px;
+  border-top-left-radius: 6px;
+}
+
+.corner-tr {
+  top: 10px;
+  right: 10px;
+  border-width: 3px 3px 0 0;
+  border-top-right-radius: 6px;
+}
+
+.corner-bl {
+  bottom: 10px;
+  left: 10px;
+  border-width: 0 0 3px 3px;
+  border-bottom-left-radius: 6px;
+}
+
+.corner-br {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 3px 3px 0;
+  border-bottom-right-radius: 6px;
+}
+
+/* Print Media Styles: Clean, crisp physical checkpoint sheets */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .printable-checkpoint-sheet,
+  .printable-checkpoint-sheet * {
+    visibility: visible;
+  }
+
+  .printable-checkpoint-sheet {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 30px auto !important;
+    page-break-after: always;
+    box-shadow: none !important;
+    border: 2px solid #0f172a !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Global Dark Nocturnal Theme Scrollbars (Prevents Default White Windows Scrollbars) */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(245, 158, 11, 0.6) #070d1d;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 5px;
+    background: #070d1d;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #070d1d;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(245, 158, 11, 0.6);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fbbf24;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: #070d1d;
+  }
+
+  /* Organizer Card Actions Horizontal Scroll Bar - Same Color as Dark Card & Gold Theme */
+  .card-actions-scroll,
+  .card-actions-scroll *,
+  .card-actions-scroll div {
+    scrollbar-width: thin !important;
+    scrollbar-color: #f59e0b #0a1124 !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card-actions-scroll::-webkit-scrollbar,
+  .card-actions-scroll *::-webkit-scrollbar,
+  .card-actions-scroll div::-webkit-scrollbar {
+    height: 5px !important;
+    width: 5px !important;
+    background: #0a1124 !important;
+  }
+
+  .card-actions-scroll::-webkit-scrollbar-track,
+  .card-actions-scroll *::-webkit-scrollbar-track,
+  .card-actions-scroll div::-webkit-scrollbar-track {
+    background: #0a1124 !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(245, 158, 11, 0.2) !important;
+  }
+
+  .card-actions-scroll::-webkit-scrollbar-thumb,
+  .card-actions-scroll *::-webkit-scrollbar-thumb,
+  .card-actions-scroll div::-webkit-scrollbar-thumb {
+    background: #f59e0b !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(254, 240, 138, 0.25) !important;
+  }
+
+  .card-actions-scroll::-webkit-scrollbar-thumb:hover,
+  .card-actions-scroll *::-webkit-scrollbar-thumb:hover,
+  .card-actions-scroll div::-webkit-scrollbar-thumb:hover {
+    background: #fbbf24 !important;
+  }
+
+  .card-actions-scroll::-webkit-scrollbar-button,
+  .card-actions-scroll *::-webkit-scrollbar-button,
+  .card-actions-scroll div::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}

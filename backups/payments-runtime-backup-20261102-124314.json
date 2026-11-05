@@ -1,0 +1,28 @@
+﻿[
+    {
+        "id":  "pay-001",
+        "eventId":  "evt-101",
+        "eventTitle":  "The Great Belltower Mystery",
+        "username":  "ExplorerArjun",
+        "utrNumber":  "928172948192",
+        "amount":  199,
+        "currency":  "₹",
+        "paymentMethod":  "UPI (Google Pay)",
+        "status":  "verified",
+        "createdAt":  "2026-11-01T19:00:02.044Z",
+        "campusName":  "Stanford Innovation Campus"
+    },
+    {
+        "id":  "pay-002",
+        "eventId":  "evt-101",
+        "eventTitle":  "The Great Belltower Mystery",
+        "username":  "CipherSophia",
+        "utrNumber":  "551982736412",
+        "amount":  199,
+        "currency":  "₹",
+        "paymentMethod":  "UPI (PhonePe)",
+        "status":  "verified",
+        "createdAt":  "2026-11-01T23:10:02.044Z",
+        "campusName":  "Stanford Innovation Campus"
+    }
+]
